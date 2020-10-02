@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/new_toolbar_home" />
+
+    <TextView
+        android:id="@+id/introHeader"
+        fontPath="fonts/AlteHaasGroteskBold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="10dp"
+        android:text="@string/ready_for_trip"
+        android:textColor="@color/brand_dark"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/destinationLeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:alpha="0.2"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/activity_vertical_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/map_bg_faded" />
+
+    <TextView
+        android:id="@+id/destinationName"
+        fontPath="fonts/AlteHaasGroteskBold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:shadowColor="@color/brand_light"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="@color/brand_dark"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/travelDates"
+        fontPath="fonts/Lato-Semibold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/destinationName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/brand_dark"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/travelWeatherHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/travelDates"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/weatherIcon"
+            fontPath="fonts/weathericonsregular.ttf"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="\uf00d"
+            android:textAlignment="center"
+            android:textColor="@color/brand_dark"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/travelWeather"
+            fontPath="fonts/Lato-Semibold.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/destinationName"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="left|center_vertical"
+            android:text="weather report"
+            android:textColor="@color/brand_dark"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/totalCost"
+        fontPath="fonts/AlteHaasGroteskBold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/totalPeople"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:shadowColor="@color/brand_light"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="@color/brand_dark"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/totalPeople"
+        fontPath="fonts/Lato-Semibold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TripDetailsHolder"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="right"
+        android:shadowColor="@color/brand_light"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="@color/brand_dark"
+        android:textSize="20sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/TripDetailsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/logos"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/tripDetailsHolderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/hotelDetailsHolder"
+            android:layout_alignParentBottom="false"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/flightDetailsText"
+                        fontPath="fonts/Lato-Semibold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/brand_dark"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/hotelName"
+                        fontPath="fonts/Lato-Semibold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/brand_dark"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:rotation="180"
+                    android:src="@drawable/ic2_left"
+                    android:tint="@color/brand_dark" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/logos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailDetailsHolder"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight=".5"
+            android:scaleType="center"
+            android:src="@drawable/skyscannerlogo" />
+
+        <ImageView
+            android:id="@+id/imageView91"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight=".5"
+            android:scaleType="center"
+            android:src="@drawable/bookingcomlogo"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hotelDetailsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailDetailsHolder"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/hotelDetailsHolderlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView101"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:rotation="180"
+                    android:src="@drawable/ic2_left"
+                    android:tint="@color/blue" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/emailDetailsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:padding="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/emailDetailsHolderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email_me_details"
+                        android:textColor="@color/brand_dark"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView102"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:rotation="180"
+                    android:src="@drawable/ic2_left"
+                    android:tint="@color/blue" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/detailsLoader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brand_dark"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+</RelativeLayout>

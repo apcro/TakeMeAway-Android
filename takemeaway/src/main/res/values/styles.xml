@@ -1,0 +1,82 @@
+<resources>
+
+    <style name="AppThemeWhite" parent="Theme.AppCompat.NoActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowBackground">@color/brand_dark</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textAppearanceButton">@style/textAppearanceButton</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="textAppearanceButton" parent="@android:style/TextAppearance.Material.Widget.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/brand_light</item>
+        <item name="colorPrimaryDark">@color/brand_dark</item>
+        <item name="colorAccent">@color/brand_accent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
+        <item name="android:datePickerStyle">@style/myDatePickerStyle</item>
+    </style>
+
+    <style name="myDatePickerStyle" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <style name="MaterialDrawer.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/brand_dark</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/brand_dark</item>
+    </style>
+
+    <style name="BrandButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rounded_border_shadow_brand_bg</item>
+        <item name="android:textColor">@color/brand_light</item>
+    </style>
+
+    <style name="BrandButtonLightSmall">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/brand_light</item>
+        <item name="android:textColor">@color/brand_dark</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/brand_accent</item>
+        <item name="android:textColorPrimary">@color/brand_light</item>
+        <item name="android:background">@color/brand_dark</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/brand_accent</item>
+        <item name="android:textColorPrimary">@color/brand_light</item>
+        <item name="android:background">@color/brand_dark</item>
+    </style>
+
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/brand_light</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <!--<item name="tabBackground">?attr/selectableItemBackground</item>-->
+        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/brand_accent</item>
+    </style>
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/brand_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+</resources>

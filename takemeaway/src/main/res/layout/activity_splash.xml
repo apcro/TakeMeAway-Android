@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_image_2"
+        android:visibility="gone" />
+    <!--android:src="@drawable/lakebackground"-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imgLogo"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="48dp"-->
+    <!--android:adjustViewBounds="false"-->
+    <!--android:scaleType="fitCenter"-->
+    <!--android:src="@drawable/logo_white" />-->
+
+    <TextView
+        android:id="@+id/imgText"
+        fontPath="fonts/LobsterTwo-BoldItalic.otf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buildDate"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:shadowColor="@color/brand_light"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="15"
+        android:text="TakeMeAway"
+        android:textColor="@color/brand_light"
+        android:textSize="48sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/buildDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginBottom="40dp"
+        android:padding="10dp"
+        android:shadowColor="@color/brand_dark"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="the card swiping travel inspiration app"
+        android:textAlignment="center"
+        android:textColor="@color/brand_light" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+
+
+</RelativeLayout>

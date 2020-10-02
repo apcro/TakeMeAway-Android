@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/new_toolbar_home" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/detailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="false">
+
+                    <ImageView
+                        android:id="@+id/cityImage"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/amsterdam_256"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_alignParentTop="true"
+                        android:alpha="1"
+                        android:background="@drawable/gradientblackdown">
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/cityName"
+                            fontPath="fonts/AlteHaasGroteskBold.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:lineSpacingMultiplier="0.7"
+                            android:paddingRight="10dp"
+                            android:text="City Name"
+                            android:textColor="@color/brand_light"
+                            android:textSize="48sp" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/descriptionHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/cityDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description"
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lastElement"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"></RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/loadFader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brand_dark"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loaderImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            fab:srcCompat="@drawable/lakebackground" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+

@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:font="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
+
+    <Button
+        android:id="@+id/saveButton"
+        style="@style/BrandButton"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Save" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/saveButton"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <LinearLayout
+                android:id="@+id/budget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/budgetLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Total Budget"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"/>
+
+                    <TextView
+                        android:id="@+id/budgetValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:text="500"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+                </LinearLayout>
+
+                <!--style="@style/Widget.AppCompat.SeekBar.Discrete"-->
+                <SeekBar
+                    android:id="@+id/budgetSeekbar"
+
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="34"
+                    android:progress="2"
+                    android:progressTint="@color/brand_light"
+                    android:thumb="@drawable/ic2_marker"
+                    android:thumbTint="@color/brand_dark" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/budget"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/peopleLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="People"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"/>
+
+                    <TextView
+                        android:id="@+id/peopleValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:text="2"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+                </LinearLayout>
+
+                <!--style="@style/Widget.AppCompat.SeekBar.Discrete"-->
+                <SeekBar
+                    android:id="@+id/peopleSeekbar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="6"
+                    android:progress="1"
+                    android:progressTint="@color/brand_light"
+                    android:thumb="@drawable/ic2_marker"
+                    android:thumbTint="@color/brand_dark" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/split"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/people"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/splitLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Travel &amp; Accommodation Split"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"/>
+
+                    <TextView
+                        android:id="@+id/splitValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:text="50%"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+                </LinearLayout>
+
+                <!--style="@style/Widget.AppCompat.SeekBar.Discrete"-->
+                <SeekBar
+                    android:id="@+id/splitSeekbar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="2"
+                    android:progress="1"
+                    android:progressTint="@color/brand_light"
+                    android:thumb="@drawable/ic_room_white_36dp"
+                    android:thumbTint="@color/brand_dark" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/travelling"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/split"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/datesLabel"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Travelling"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/travellingGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/thisWeekend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="This Weekend"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/nextWeekend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Next Weekend"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/weekendAfter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="In 2 Weeks"
+                            android:textColor="@color/brand_dark" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/thisWeekendDates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/nextWeekendDates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/weekendAfterDates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/leaveselection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/travelling"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/travelOptionsLabel"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Travel Options"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/leaveLabel"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Leave on"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/leaveGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/leaveThursday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Thursday"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/leaveFriday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Friday"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/leaveSaturday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Saturday"
+                            android:textColor="@color/brand_dark" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/returnselection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leaveselection"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/returnLabel"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Return on"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/returnGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/returnSunday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sunday"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/returnMonday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Monday"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/returnTuesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Tuesday"
+                            android:textColor="@color/brand_dark" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/returnselection"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/currencyLabel"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="Currency"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp">
+
+                    <RadioGroup
+                        android:id="@+id/currencyGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/eur"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="€ - Euros"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/gbp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="£ - Pounds Sterling"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/usd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$ - US Dollars"
+                            android:textColor="@color/brand_dark" />
+
+                        <RadioButton
+                            android:id="@+id/cad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$ - Canadian Dollars"
+                            android:textColor="@color/brand_dark" />
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/hotelTypesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/currency"
+                android:layout_marginTop="12dp"
+                android:text="Hotel Types"
+                android:textAppearance="@android:style/TextAppearance.Material.Title"
+                android:textColor="@color/brand_dark"
+                fontPath="fonts/AlteHaasGroteskBold.ttf"/>
+
+            <Switch
+                android:id="@+id/switch201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotelTypesHeader"
+                android:text="Apartments"
+                android:textColor="@color/brand_dark"
+                android:thumbTint="@drawable/switchthumb"
+                android:trackTint="@color/brand_accent" />
+
+            <Switch
+                android:id="@+id/switch204"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/switch201"
+                android:text="Hotels"
+                android:textColor="@color/brand_dark"
+                android:thumbTint="@drawable/switchthumb"
+                android:trackTint="@color/brand_accent" />
+
+            <Switch
+                android:id="@+id/switch208"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/switch204"
+                android:text="Bed &amp; Breakfasts"
+                android:textColor="@color/brand_dark"
+                android:thumbTint="@drawable/switchthumb"
+                android:trackTint="@color/brand_accent" />
+
+            <!--<Switch-->
+                <!--android:id="@+id/switch213"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/switch208"-->
+                <!--android:text="Villas"-->
+                <!--android:textColor="@color/brand_dark"-->
+                <!--android:thumbTint="@drawable/switchthumb"-->
+                <!--android:trackTint="@color/brand_accent" />-->
+
+            <Switch
+                android:id="@+id/switch219"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/switch208"
+                android:text="Aparthotels"
+                android:textColor="@color/brand_dark"
+                android:thumbTint="@drawable/switchthumb"
+                android:trackTint="@color/brand_accent" />
+
+            <!--<Switch-->
+                <!--android:id="@+id/switch229"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/switch219"-->
+                <!--android:text="Condos"-->
+                <!--android:textColor="@color/brand_dark"-->
+                <!--android:thumbTint="@drawable/switchthumb"-->
+                <!--android:trackTint="@color/brand_accent" />-->
+
+            <!--<Switch-->
+                <!--android:id="@+id/switch230"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/switch229"-->
+                <!--android:text="Cottages"-->
+                <!--android:textColor="@color/brand_dark"-->
+                <!--android:thumbTint="@drawable/switchthumb"-->
+                <!--android:trackTint="@color/brand_accent" />-->
+
+            <Button
+                android:id="@+id/resetTutorial"
+                style="@style/BrandButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:text="Reset Tutorial"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

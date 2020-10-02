@@ -1,0 +1,279 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/saveButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/avatarImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    app:civ_border_color="@color/brand_dark"
+                    app:civ_border_width="3dp" />
+
+
+                <TextView
+                    android:id="@+id/usernameLabel"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Username"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/brand_dark" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/usernameLabel"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/emailLabel"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Email Address"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/brand_dark" />
+
+                <EditText
+                    android:id="@+id/emailaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/emailLabel"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Email Address"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/firstNameLabel"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/emailaddress"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="First Name"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/brand_dark" />
+
+                <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/firstNameLabel"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="First Name"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/lastNameLabel"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/firstname"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Last Name"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/brand_dark" />
+
+                <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lastNameLabel"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName" />
+
+                <LinearLayout
+                    android:id="@+id/airport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lastname"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/homeLabel"
+                            fontPath="fonts/AlteHaasGroteskBold.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="Home Airport"
+                            android:textAppearance="@android:style/TextAppearance.Material.Title"
+                            android:textColor="@color/brand_dark" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/homeLabel2"
+                                fontPath="fonts/AlteHaasGroteskBold.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight=".5"
+                                android:gravity="right|center_vertical"
+                                android:paddingLeft="5dp"
+                                android:text="Auto"
+                                android:textAlignment="gravity" />
+
+                            <ImageView
+                                android:id="@+id/iconFindme"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/ic_menu_compass" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/selectedhometext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/airport"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="Home Airport"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/setManually"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="Choose Nearest"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+                    <Spinner
+                        android:id="@+id/homeSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="false"
+                        android:layout_weight="1"
+                        android:textAlignment="gravity" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/resetTutorial"
+                        fontPath="fonts/AlteHaasGroteskBold.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="Reset the tutorial"
+                        android:textAppearance="@android:style/TextAppearance.Material.Title"
+                        android:textColor="@color/brand_dark" />
+
+                    <Button
+                        android:id="@+id/tutorialButton"
+                        style="@style/BrandButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="6dp"
+                        android:padding="6dp"
+                        android:text="Reset Tutorial" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/BrandButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="6dp"
+            android:text="Save" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="transparent" type="color">#00FFFFFF</item>
+    <item name="red" type="color">#B4000F</item>
+    <item name="darkred" type="color">#90000c</item>
+    <item name="grey" type="color">#555555</item>
+    <item name="green" type="color">#4499CC00</item>
+    <item name="darkgreen" type="color">#FF669900</item>
+    <item name="lightblue" type="color">#4296F0</item>
+    <item name="blue" type="color">#3478c0</item>
+    <item name="creategrey" type="color">#F2F2F2</item>
+    <item name="lightgrey" type="color">#C2C2C2</item>
+    <item name="layergreybackground" type="color">#E6E6E6</item>
+    <item name="convo_separator" type="color">#d9d9d9</item>
+    <item name="chat_message_grey" type="color">#ffffff</item>
+    <item name="chat_message_blue" type="color">#bbdefb</item>
+    <item name="darkgrey" type="color">#666666</item>
+    <item name="lightgreybackground" type="color">#F2F2F2</item>
+    <item name="msg_grey" type="color">#B6B7B6</item>
+    <item name="focus_color" type="color">#caedfc</item>
+    <item name="focus_color_stroke" type="color">#4fc3f7</item>
+    <item name="white_button_pressed" type="color">#ECECEC</item>
+    <item name="overlay" type="color">#26FFFFFF</item>
+    <item name="brand" type="color">#ffffff</item>
+    <!--<item name="white" type="color">#ffffff</item>-->
+
+    <item name="refresh_red" type="color">#FF0000</item>
+    <color name="refresh_orange">#FF9900</color>
+    <color name="refresh_green">#009900</color>
+    <color name="refresh_blue">#000099</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="light_overlay">#40000000</color>
+
+    <color name="fb_blue">#3B5998</color>
+    <color name="fb_darkblue">#293e6a</color>
+
+    <!--<color name="brand_light">#74ccd0</color>-->
+    <!--<color name="brand_dark">#024860</color>-->
+    <!--<color name="brand_accent">#FDB834</color>-->
+
+    <color name="brand_light">#4ECDC4</color>
+    <color name="brand_dark">#1A535C</color>
+    <color name="brand_accent">#FFE66D</color>
+    <color name="white">#FEFEFE</color>
+
+
+
+    <!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#2196F3</color>
+    <color name="material_drawer_primary_dark">#1976D2</color>
+    <color name="material_drawer_primary_light">#BBDEFB</color>
+    <color name="material_drawer_accent">#FF4081</color>
+    <color name="material_drawer_window_background">#F9F9F9</color>
+    <color name="material_drawer_background">#F9F9F9</color>
+    <!-- Material DEFAULT text / items colors -->
+    <color name="material_drawer_icons">#FFF</color>
+    <color name="material_drawer_primary_text">#212121</color>
+    <color name="material_drawer_secondary_text">#727272</color>
+    <color name="material_drawer_hint_text">#B8B8B8</color>
+    <color name="material_drawer_divider">#B6B6B6</color>
+    <!-- Material DEFAULT drawer colors -->
+    <color name="material_drawer_selected">#E8E8E8</color>
+    <color name="material_drawer_selected_text">#2196F3</color>
+
+    <!-- tutorial -->
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#024860</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#74ccd0</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+    </array>
+
+</resources>

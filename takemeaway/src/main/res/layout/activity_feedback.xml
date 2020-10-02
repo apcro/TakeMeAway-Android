@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_weight="0.84">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <LinearLayout
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/feedbackLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="Let us know what you think"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/brand_dark" />
+
+                <EditText
+                    android:id="@+id/feedbackText"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/brand_dark"
+                    android:breakStrategy="balanced"
+                    android:fitsSystemWindows="true"
+                    android:gravity="top"
+                    android:hint="Your Message"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:singleLine="false" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sendButton"
+                style="@style/BrandButton"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/feedback"
+                android:layout_margin="10dp"
+                android:text="Send" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

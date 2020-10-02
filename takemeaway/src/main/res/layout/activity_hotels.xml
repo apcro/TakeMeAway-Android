@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapHolder"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true" />
+
+    <androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hotelpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mapHolder">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_holder"
+        android:layout_alignParentStart="true"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/button_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/new_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:foregroundTint="@color/brand_light"
+            android:src="@drawable/ic_favorite_border_white_24dp"
+            fab:fab_colorNormal="@color/brand_dark"
+            fab:fab_colorPressed="@color/brand_accent"
+            fab:fab_colorRipple="@color/brand_light"
+            fab:fab_label="Save Holiday!"
+            fab:fab_size="normal" />
+
+        <!--<Button-->
+            <!--android:id="@+id/bookButtontest"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="false"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@drawable/very_rounded_box"-->
+            <!--android:backgroundTint="@color/brand_dark"-->
+            <!--android:text="Button"-->
+            <!--android:textColor="@color/brand_light" />-->
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/hotel_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic2_hotel"
+            android:tint="@color/white"
+            app:fab_size="normal"
+            fab:fab_colorNormal="@color/brand_dark"
+            fab:fab_colorPressed="@color/brand_accent"
+            fab:fab_colorRipple="@color/brand_light"
+            fab:fab_label="More information" />
+
+    </RelativeLayout>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/book_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:foregroundTint="@color/brand_dark"
+        android:src="@drawable/ic_flight_takeoff_white_24dp"
+        app:fab_colorNormal="@color/brand_light"
+        app:fab_colorPressed="@color/brand_accent"
+        app:fab_colorRipple="@color/brand_dark"
+        app:fab_size="normal"
+        fab:fab_label="Book Holiday!" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/hotel_fab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:foregroundTint="@color/brand_light"
+        android:visibility="gone"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_colorNormal="@color/brand_dark"
+        fab:menu_colorPressed="@color/brand_accent"
+        fab:menu_colorRipple="@color/brand_light"
+        fab:menu_fab_label=""
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_labels_textColor="@color/brand_light"
+        fab:menu_showShadow="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/save_travel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/brand_dark"
+            fab:fab_colorPressed="@color/brand_accent"
+            fab:fab_colorRipple="@color/brand_light"
+            fab:fab_label="Save Hotel &amp; Destination"
+            fab:fab_size="mini" />
+
+        <!--<com.github.clans.fab.FloatingActionButton-->
+        <!--android:id="@+id/more_hotels"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:fab_colorNormal="@color/brand_dark"-->
+        <!--app:fab_colorPressed="@color/brand_accent"-->
+        <!--app:fab_colorRipple="@color/brand_light"-->
+        <!--fab:fab_size="mini"-->
+        <!--fab:fab_label="Load More Hotels" />-->
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
+
+    <RelativeLayout
+        android:id="@+id/loadFader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loaderImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            fab:srcCompat="@drawable/lakebackground" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+

@@ -1,0 +1,216 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+
+    compileSdkVersion 28
+
+    def versionPropsFile = file('version.properties')
+    def value = 0
+    Properties versionProps = new Properties()
+    if (!versionPropsFile.exists()) {
+        versionProps['VERSION_PATCH'] = "0"
+        versionProps['VERSION_NUMBER'] = "0"
+        versionProps['VERSION_BUILD'] = "-1" // I set it to minus one so the first build is 0 which isn't super important.
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+
+    def runTasks = gradle.startParameter.taskNames
+    if (':takemeaway:assembleRelease' in runTasks) {
+        value = 1
+    }
+
+    def mVersionName = ""
+    def mFileName = ""
+
+    if (versionPropsFile.canRead()) {
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        versionProps['VERSION_PATCH'] = (versionProps['VERSION_PATCH'].toInteger() + value).toString()
+        versionProps['VERSION_NUMBER'] = (versionProps['VERSION_NUMBER'].toInteger() + value).toString()
+        versionProps['VERSION_BUILD'] = (versionProps['VERSION_BUILD'].toInteger() + 1).toString()
+
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        mVersionName = "v1.0.${versionProps['VERSION_PATCH']}"
+        mFileName = "TakeMeAway-${mVersionName}.apk"
+
+        defaultConfig {
+            minSdkVersion 23
+            targetSdkVersion 29
+            applicationId "io.takemeaway.takemeaway" // 3: change to your package name
+            versionCode versionProps['VERSION_NUMBER'].toInteger()
+            versionName "${mVersionName} Build: ${versionProps['VERSION_BUILD']}"
+        }
+
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+
+    if (':takemeaway:assembleRelease' in runTasks) {
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                    outputFileName = mFileName
+                }
+            }
+        }
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId 'io.takemeaway.takemeaway'
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 54
+        versionName "1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        alpha {
+            debuggable false
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+    aaptOptions {
+        cruncherEnabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.flurry.android:analytics:10.1.0@aar'
+    implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //Android support libraries
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    // need to override these versions
+    implementation 'androidx.core:core:1.2.0'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+
+    // twitter login
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
+
+    //Picasso sdk
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //Facebook sdk
+
+    //    implementation 'com.facebook.android:facebook-login:4.29.0'
+
+    // retrofit, gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+
+    // logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+    // placeholder view. could use for swipe too
+//    implementation 'com.mindorks:placeholderview:0.7.1'
+    implementation 'com.mindorks.android:placeholderview:1.0.3'
+    annotationProcessor 'com.mindorks.android:placeholderview-compiler:1.0.3'
+
+    // google services
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Firebase for messaging
+    implementation 'com.google.firebase:firebase-messaging:20.1.1'
+
+    // remove for launch
+
+    //    compile 'com.facebook.stetho:stetho:1.5.0'
+
+    // fab buttons
+    implementation 'com.github.clans:fab:1.6.4'
+
+    // network status
+    implementation 'com.novoda:merlin:1.2.1'
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    // time handler backport
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+
+    // used for avatar
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    // Calligraphy for fonts
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.daasuu:EasingInterpolator:1.0.0'
+
+    // from jitpack
+
+    // intro tour
+
+    //    compile 'com.github.deano2390:MaterialShowcaseView:1.2.0'
+    implementation 'com.github.faruktoptas:FancyShowCaseView:1.0.0'
+
+    // fancy popup
+//    implementation 'com.github.andyxialm:ColorDialog:1.0.0'
+
+    // pager dots
+    implementation 'com.github.hrskrs:InstaDotView:1.1'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+        transitive = true
+    }
+    implementation 'com.google.firebase:firebase-core:17.2.3'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+static def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd-HH:mm.ss')
+    return formattedDate
+}
+
+apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.takemeaway.takemeaway" >
+
+    <uses-sdk tools:overrideLibrary="android.support.v17.leanback" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <permission
+        android:name="com.example.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.permission.MAPS_RECEIVE"/>
+
+    <application
+        android:name=".application.TakeMeAway"
+
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+
+        >
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/gmaps" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activities.HotelActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.TermsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.DevadminActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.SavedActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.HotelDetailActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.HelpActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.NoNetworkActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.BookingActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.SavedItemDetailsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.CityDetailsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.ExternalBookingActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.PrivacyActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.MapActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activities.ProfileFilterActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        <activity android:name=".activities.HotelReviewsActivity" />
+        <activity android:name=".activities.BookingJourneyFragmentActivity" />
+
+
+        <service
+            android:exported="false"
+            android:name="com.novoda.merlin.service.MerlinService" />
+
+        <service
+            android:name=".services.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".services.FirebaseMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

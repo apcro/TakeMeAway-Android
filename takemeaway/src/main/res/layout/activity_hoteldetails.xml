@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/detailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reviewScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/bc_review_score_button"
+                    android:gravity="center"
+                    android:text="8.8"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:translationZ="2dp" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/hotelpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="false">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignBottom="@+id/linearLayout2"
+                        android:layout_alignParentTop="true"
+                        android:alpha="0.6"
+                        android:background="@drawable/gradientblackdown">
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/hotelName"
+                            fontPath="fonts/AlteHaasGroteskBold.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:lineSpacingMultiplier="0.7"
+                            android:paddingRight="10dp"
+                            android:text="Hotel Name Hotel Name Hotel Name Hotel Name Hotel Name Hotel Name Hotel Name Hotel Name"
+                            android:textColor="@color/brand_light"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/hotelRating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="10dp"
+                            android:text="Rating: 4/5"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/brand_light" />
+
+                        <TextView
+                            android:id="@+id/hotelMaxprice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="10dp"
+                            android:text="Per person, per night: £100"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/brand_light" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapHolder"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/detailsLayout"
+                android:layout_alignParentStart="true" />
+
+            <RelativeLayout
+                android:id="@+id/bookingcomDetailLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_box"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/bookingcomDetailText"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Hotel information provided by"
+                    android:textAlignment="center"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/bookingcomLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/bookingcomDetailText"
+                    android:src="@drawable/bookingcomlogo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/bookingcomLogo"
+                    android:orientation="vertical"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp">
+
+                    <Button
+                        android:id="@+id/hotelReviewsOld"
+                        style="@style/BrandButton"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Read Hotel Reviews"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/hotelReviews"
+                        style="@style/BrandButton"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:text="Read Reviews"
+                        android:textAllCaps="false"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/descriptionHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Hotel Description"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hotelDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="16sp"
+                    android:text="Description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description description"
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hotelMessageHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="A Message from the Hotel"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hotelWelcomeMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="16sp"
+                    android:text="Hotelier welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message welcome message "
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:alpha=".5"
+                android:background="@color/brand_dark">
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView10"
+                fontPath="fonts/AlteHaasGroteskBold.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="Room Selection - tap to select your room"
+                android:textColor="@color/brand_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/roomdetailPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_box"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/roompager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/roomdetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone">
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:alpha=".5"
+                android:background="@color/brand_dark">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hotelInfoHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/TextView11"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Hotel Details"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hotelImportantinformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TextView11"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingRight="10dp"
+                    android:textSize="16sp"
+                    android:text="Important Information"
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Address"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView4"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingRight="10dp"
+                    android:text="address"
+                    android:textSize="16sp"
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/checkInLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Check In"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/checkIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingRight="10dp"
+                    android:text="checkIn"
+                    android:textSize="16sp"
+                    android:textColor="@color/brand_dark" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/checkOutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Check Out"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/checkOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingRight="10dp"
+                    android:text="checkOut"
+                    android:textSize="16sp"
+                    android:textColor="@color/brand_dark" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/facilitiesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    fontPath="fonts/AlteHaasGroteskBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Hotel Facilities"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView6"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/amenitiesContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView6"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="10dp"
+                        android:text="list of facilities"
+                        android:textSize="16sp"
+                        android:textColor="@color/brand_dark" />
+
+                    <TextView
+                        android:id="@+id/amenitiesContent2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView6"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:paddingRight="10dp"
+                        android:text="list of facilities"
+                        android:textSize="16sp"
+                        android:textColor="@color/brand_dark" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/lastElement"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"></RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/book_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:foregroundTint="@color/brand_dark"
+        android:src="@drawable/ic_flight_takeoff_white_24dp"
+        app:fab_colorNormal="@color/brand_light"
+        app:fab_colorPressed="@color/brand_accent"
+        app:fab_colorRipple="@color/brand_light"
+        app:fab_size="normal"
+        fab:fab_label="Book Holiday!" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/new_favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:foregroundTint="@color/brand_light"
+        android:src="@drawable/ic_favorite_border_white_24dp"
+        fab:fab_colorNormal="@color/brand_dark"
+        fab:fab_colorPressed="@color/brand_accent"
+        fab:fab_colorRipple="@color/brand_light"
+        fab:fab_label="Save Holiday!"
+        fab:fab_size="normal" />
+
+    <RelativeLayout
+        android:id="@+id/loadFader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brand_dark"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loaderImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            fab:srcCompat="@drawable/lakebackground" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
